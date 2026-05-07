@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
   <title>Andys Store</title>
 
@@ -22,26 +22,38 @@
       color:#333;
     }
 
+    /* NAVBAR */
     nav{
-      background:white;
+      width:100%;
       padding:18px;
-      text-align:center;
-      font-size:28px;
-      font-weight:700;
-      color:#ff7a00;
-      box-shadow:0 3px 15px rgba(0,0,0,0.08);
+      background:white;
       position:sticky;
       top:0;
+      z-index:100;
+      text-align:center;
+      box-shadow:0 3px 15px rgba(0,0,0,0.08);
     }
 
+    nav h1{
+      color:#ff7a00;
+      font-size:28px;
+    }
+
+    /* HERO */
     .hero{
+      min-height:40vh;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
       text-align:center;
-      padding:40px 20px;
+      padding:30px 20px;
       animation:fade 1s ease;
     }
 
-    .hero h1{
-      font-size:38px;
+    .hero h2{
+      font-size:40px;
+      line-height:1.2;
       margin-bottom:10px;
     }
 
@@ -54,7 +66,9 @@
       font-size:15px;
     }
 
+    /* MENU */
     .menu{
+      width:100%;
       display:flex;
       flex-direction:column;
       align-items:center;
@@ -63,14 +77,14 @@
     }
 
     .card{
-      width:90%;
-      max-width:320px;
+      width:100%;
+      max-width:360px;
       background:white;
-      border-radius:25px;
+      border-radius:28px;
       overflow:hidden;
       box-shadow:0 5px 20px rgba(0,0,0,0.08);
+      animation:up 1s ease;
       transition:0.3s;
-      animation:up 0.8s ease;
     }
 
     .card:hover{
@@ -79,40 +93,42 @@
 
     .card img{
       width:100%;
-      height:220px;
+      height:240px;
       object-fit:cover;
     }
 
     .content{
-      padding:20px;
+      padding:22px;
       text-align:center;
     }
 
-    .content h2{
+    .content h3{
+      font-size:28px;
       margin-bottom:8px;
-      font-size:25px;
     }
 
     .price{
       color:#ff7a00;
+      font-size:20px;
       font-weight:600;
       margin-bottom:15px;
     }
 
-    button{
+    .btn{
+      width:100%;
       border:none;
       background:#ff7a00;
       color:white;
-      padding:12px 20px;
-      border-radius:14px;
+      padding:14px;
+      border-radius:15px;
+      font-size:16px;
       cursor:pointer;
       transition:0.3s;
-      font-size:15px;
     }
 
-    button:hover{
+    .btn:hover{
       background:#ff9500;
-      transform:scale(1.05);
+      transform:scale(1.02);
     }
 
     footer{
@@ -121,8 +137,10 @@
       margin-top:20px;
       background:#222;
       color:white;
+      font-size:14px;
     }
 
+    /* ANIMASI */
     @keyframes fade{
       from{
         opacity:0;
@@ -137,46 +155,54 @@
     @keyframes up{
       from{
         opacity:0;
-        transform:translateY(20px);
+        transform:translateY(30px);
       }
       to{
         opacity:1;
         transform:translateY(0);
       }
     }
+
   </style>
 </head>
 
 <body>
 
-  <nav>Andys Store 🍔</nav>
+  <!-- NAVBAR -->
+  <nav>
+    <h1>Andys Store 🍔</h1>
+  </nav>
 
+  <!-- HERO -->
   <section class="hero">
-    <h1>Modern <span>Food Menu</span></h1>
-    <p>Burger dan dessert favorit ala Amerika</p>
+    <h2>Modern <span>American Food</span></h2>
+    <p>Simple • Cute • Modern</p>
   </section>
 
+  <!-- MENU -->
   <section class="menu">
 
+    <!-- BURGER -->
     <div class="card">
       <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?q=80&w=1200&auto=format&fit=crop">
 
       <div class="content">
-        <h2>Burger</h2>
+        <h3>Burger</h3>
         <p class="price">$8</p>
 
-        <button>Order Now</button>
+        <button class="btn">Order Now</button>
       </div>
     </div>
 
+    <!-- CHEESECAKE -->
     <div class="card">
       <img src="https://images.unsplash.com/photo-1533134242443-d4fd215305ad?q=80&w=1200&auto=format&fit=crop">
 
       <div class="content">
-        <h2>Cheese Cake</h2>
+        <h3>Cheese Cake</h3>
         <p class="price">$6</p>
 
-        <button>Order Now</button>
+        <button class="btn">Order Now</button>
       </div>
     </div>
 
