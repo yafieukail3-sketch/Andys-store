@@ -7,88 +7,122 @@
   <title>Andys Store</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&display=swap" rel="stylesheet">
 
   <style>
     *{
       margin:0;
       padding:0;
       box-sizing:border-box;
-      font-family:'Poppins', sans-serif;
+      font-family:'Fredoka', sans-serif;
     }
 
     body{
-      background:#fff8f3;
-      color:#333;
+      background:#fff0f5;
+      overflow-x:hidden;
+      color:#444;
     }
 
-    /* NAVBAR */
+    /* BACKGROUND DECOR */
+    .bubble{
+      position:fixed;
+      border-radius:50%;
+      background:rgba(255,255,255,0.5);
+      animation:float 6s infinite ease-in-out;
+      z-index:-1;
+    }
+
+    .bubble1{
+      width:120px;
+      height:120px;
+      top:80px;
+      left:-20px;
+    }
+
+    .bubble2{
+      width:80px;
+      height:80px;
+      right:10px;
+      top:250px;
+      animation-delay:2s;
+    }
+
+    .bubble3{
+      width:100px;
+      height:100px;
+      bottom:100px;
+      left:20px;
+      animation-delay:1s;
+    }
+
     nav{
-      width:100%;
-      padding:18px;
-      background:white;
+      padding:22px;
+      text-align:center;
+      background:#ffc1da;
+      color:white;
+      font-size:30px;
+      font-weight:600;
       position:sticky;
       top:0;
       z-index:100;
-      text-align:center;
-      box-shadow:0 3px 15px rgba(0,0,0,0.08);
+      box-shadow:0 5px 15px rgba(255,182,193,0.5);
     }
 
-    nav h1{
-      color:#ff7a00;
-      font-size:28px;
-    }
-
-    /* HERO */
     .hero{
-      min-height:40vh;
-      display:flex;
-      flex-direction:column;
-      justify-content:center;
-      align-items:center;
       text-align:center;
-      padding:30px 20px;
+      padding:50px 20px 30px;
       animation:fade 1s ease;
     }
 
-    .hero h2{
-      font-size:40px;
-      line-height:1.2;
+    .hero h1{
+      font-size:42px;
+      color:#ff5fa2;
       margin-bottom:10px;
-    }
-
-    .hero span{
-      color:#ff7a00;
     }
 
     .hero p{
       color:#777;
-      font-size:15px;
+      font-size:16px;
     }
 
-    /* MENU */
+    .emoji{
+      font-size:30px;
+      animation:bounce 2s infinite;
+      display:inline-block;
+    }
+
     .menu{
-      width:100%;
       display:flex;
       flex-direction:column;
       align-items:center;
-      gap:25px;
-      padding:20px;
+      gap:30px;
+      padding:25px;
     }
 
     .card{
-      width:100%;
+      width:92%;
       max-width:360px;
       background:white;
-      border-radius:28px;
+      border-radius:30px;
       overflow:hidden;
-      box-shadow:0 5px 20px rgba(0,0,0,0.08);
+      box-shadow:0 10px 25px rgba(255,182,193,0.4);
+      transition:0.4s;
       animation:up 1s ease;
-      transition:0.3s;
+      position:relative;
     }
 
     .card:hover{
-      transform:translateY(-8px);
+      transform:translateY(-10px) scale(1.02);
+    }
+
+    .card::before{
+      content:"❤";
+      position:absolute;
+      top:15px;
+      right:18px;
+      font-size:22px;
+      color:#ff6fae;
+      animation:pulse 1.5s infinite;
     }
 
     .card img{
@@ -102,45 +136,42 @@
       text-align:center;
     }
 
-    .content h3{
-      font-size:28px;
+    .content h2{
+      color:#ff5fa2;
       margin-bottom:8px;
+      font-size:28px;
     }
 
     .price{
-      color:#ff7a00;
+      color:#ff87b7;
       font-size:20px;
-      font-weight:600;
       margin-bottom:15px;
     }
 
     .btn{
       width:100%;
-      border:none;
-      background:#ff7a00;
-      color:white;
       padding:14px;
-      border-radius:15px;
+      border:none;
+      border-radius:16px;
+      background:linear-gradient(45deg,#ff8dc7,#ffb6d9);
+      color:white;
       font-size:16px;
       cursor:pointer;
       transition:0.3s;
     }
 
     .btn:hover{
-      background:#ff9500;
-      transform:scale(1.02);
+      transform:scale(1.05);
     }
 
     footer{
       text-align:center;
-      padding:20px;
-      margin-top:20px;
-      background:#222;
-      color:white;
+      padding:25px;
+      color:#888;
       font-size:14px;
     }
 
-    /* ANIMASI */
+    /* ANIMATION */
     @keyframes fade{
       from{
         opacity:0;
@@ -163,20 +194,63 @@
       }
     }
 
+    @keyframes float{
+      0%{
+        transform:translateY(0px);
+      }
+      50%{
+        transform:translateY(-20px);
+      }
+      100%{
+        transform:translateY(0px);
+      }
+    }
+
+    @keyframes bounce{
+      0%,100%{
+        transform:translateY(0);
+      }
+      50%{
+        transform:translateY(-8px);
+      }
+    }
+
+    @keyframes pulse{
+      0%{
+        transform:scale(1);
+      }
+      50%{
+        transform:scale(1.2);
+      }
+      100%{
+        transform:scale(1);
+      }
+    }
+
   </style>
 </head>
 
 <body>
 
+  <!-- DECOR -->
+  <div class="bubble bubble1"></div>
+  <div class="bubble bubble2"></div>
+  <div class="bubble bubble3"></div>
+
   <!-- NAVBAR -->
   <nav>
-    <h1>Andys Store 🍔</h1>
+    Andys Store 🍰🍔
   </nav>
 
   <!-- HERO -->
   <section class="hero">
-    <h2>Modern <span>American Food</span></h2>
-    <p>Simple • Cute • Modern</p>
+    <div class="emoji">🧁✨💕</div>
+
+    <h1>Cute American Food</h1>
+
+    <p>
+      Sweet • Modern • Aesthetic
+    </p>
   </section>
 
   <!-- MENU -->
@@ -184,10 +258,12 @@
 
     <!-- BURGER -->
     <div class="card">
+
       <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?q=80&w=1200&auto=format&fit=crop">
 
       <div class="content">
-        <h3>Burger</h3>
+        <h2>Burger 🍔</h2>
+
         <p class="price">$8</p>
 
         <button class="btn">Order Now</button>
@@ -196,10 +272,12 @@
 
     <!-- CHEESECAKE -->
     <div class="card">
+
       <img src="https://images.unsplash.com/photo-1533134242443-d4fd215305ad?q=80&w=1200&auto=format&fit=crop">
 
       <div class="content">
-        <h3>Cheese Cake</h3>
+        <h2>Cheese Cake 🍰</h2>
+
         <p class="price">$6</p>
 
         <button class="btn">Order Now</button>
@@ -209,7 +287,7 @@
   </section>
 
   <footer>
-    © 2026 Andys Store
+    Made with 💕 by Andys Store
   </footer>
 
 </body>
