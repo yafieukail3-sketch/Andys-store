@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Andys Store</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,44 +23,25 @@
     }
 
     nav{
-      width:100%;
-      padding:18px 30px;
       background:white;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      box-shadow:0 2px 15px rgba(0,0,0,0.08);
+      padding:18px;
+      text-align:center;
+      font-size:28px;
+      font-weight:700;
+      color:#ff7a00;
+      box-shadow:0 3px 15px rgba(0,0,0,0.08);
       position:sticky;
       top:0;
     }
 
-    nav h1{
-      color:#ff7a00;
-      font-size:28px;
-    }
-
-    nav button{
-      border:none;
-      background:#ff7a00;
-      color:white;
-      padding:10px 18px;
-      border-radius:12px;
-      cursor:pointer;
-      transition:0.3s;
-    }
-
-    nav button:hover{
-      transform:scale(1.05);
-    }
-
     .hero{
       text-align:center;
-      padding:70px 20px 40px;
+      padding:40px 20px;
       animation:fade 1s ease;
     }
 
-    .hero h2{
-      font-size:45px;
+    .hero h1{
+      font-size:38px;
       margin-bottom:10px;
     }
 
@@ -69,51 +51,46 @@
 
     .hero p{
       color:#777;
-    }
-
-    .menu-title{
-      text-align:center;
-      margin-top:20px;
-      font-size:30px;
-      color:#ff7a00;
+      font-size:15px;
     }
 
     .menu{
       display:flex;
-      justify-content:center;
+      flex-direction:column;
+      align-items:center;
       gap:25px;
-      flex-wrap:wrap;
-      padding:40px 20px;
+      padding:20px;
     }
 
     .card{
+      width:90%;
+      max-width:320px;
       background:white;
-      width:240px;
-      border-radius:22px;
+      border-radius:25px;
       overflow:hidden;
       box-shadow:0 5px 20px rgba(0,0,0,0.08);
-      transition:0.35s;
+      transition:0.3s;
       animation:up 0.8s ease;
     }
 
     .card:hover{
-      transform:translateY(-10px) scale(1.03);
+      transform:translateY(-8px);
     }
 
     .card img{
       width:100%;
-      height:180px;
+      height:220px;
       object-fit:cover;
     }
 
-    .card-content{
-      padding:18px;
+    .content{
+      padding:20px;
       text-align:center;
     }
 
-    .card-content h3{
+    .content h2{
       margin-bottom:8px;
-      font-size:22px;
+      font-size:25px;
     }
 
     .price{
@@ -122,25 +99,26 @@
       margin-bottom:15px;
     }
 
-    .order-btn{
+    button{
       border:none;
       background:#ff7a00;
       color:white;
-      padding:10px 18px;
-      border-radius:12px;
+      padding:12px 20px;
+      border-radius:14px;
       cursor:pointer;
       transition:0.3s;
+      font-size:15px;
     }
 
-    .order-btn:hover{
+    button:hover{
       background:#ff9500;
       transform:scale(1.05);
     }
 
     footer{
-      margin-top:40px;
       text-align:center;
       padding:20px;
+      margin-top:20px;
       background:#222;
       color:white;
     }
@@ -159,7 +137,7 @@
     @keyframes up{
       from{
         opacity:0;
-        transform:translateY(30px);
+        transform:translateY(20px);
       }
       to{
         opacity:1;
@@ -171,37 +149,34 @@
 
 <body>
 
-  <nav>
-    <h1>Andys Store 🍔</h1>
-    <button>Order Now</button>
-  </nav>
+  <nav>Andys Store 🍔</nav>
 
   <section class="hero">
-    <h2>Simple & <span>Modern Food</span></h2>
+    <h1>Modern <span>Food Menu</span></h1>
     <p>Burger dan dessert favorit ala Amerika</p>
   </section>
-
-  <h2 class="menu-title">Our Menu</h2>
 
   <section class="menu">
 
     <div class="card">
       <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?q=80&w=1200&auto=format&fit=crop">
 
-      <div class="card-content">
-        <h3>Burger</h3>
+      <div class="content">
+        <h2>Burger</h2>
         <p class="price">$8</p>
-        <button class="order-btn">Order</button>
+
+        <button>Order Now</button>
       </div>
     </div>
 
     <div class="card">
       <img src="https://images.unsplash.com/photo-1533134242443-d4fd215305ad?q=80&w=1200&auto=format&fit=crop">
 
-      <div class="card-content">
-        <h3>Cheese Cake</h3>
+      <div class="content">
+        <h2>Cheese Cake</h2>
         <p class="price">$6</p>
-        <button class="order-btn">Order</button>
+
+        <button>Order Now</button>
       </div>
     </div>
 
